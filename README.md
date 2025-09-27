@@ -2,7 +2,8 @@ this is a text adventure game made in inform 6. once i have shipped it, i'll add
   
 1. compile the inform file.  
 you'll need the inform 6 compiler for this. [download one matching to your operating system from here](https://ifarchive.org/indexes/if-archive/infocom/compilers/inform6/executables/). add the executable to your path.  
-then, navigate to where you stored the `main.inf` file and run the command `inform6 main.inf`. this will save a main.z5 file in the same directory.
+you'll also need the [inform 6 library](https://ifarchive.org/indexes/if-archive/infocom/compilers/inform6/library/).  
+then, navigate to where you stored the `main.inf` file and run the command `inform6 main.inf -S +include_path=[path to library]`, replacing `[path to library]` with the path to where you downloaded the inform 6 library. this will save a main.z5 file in the same directory.
 
 2. run the .z5 file.  
 you'll need an interpreter for this. [download one matching to your operating system from here](https://www.ifarchive.org/indexes/if-archive/infocom/interpreters/frotz/). open the interpreter you downloaded and select the z5 file. the game will run. probably.  

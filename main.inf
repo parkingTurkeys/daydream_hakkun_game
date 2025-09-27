@@ -1,13 +1,12 @@
 ! main game function;
 ! sprig ; arcade ; high seas ; bin ; Summer of Making ; low skies ; boba ; blot ; cider ; onboard ; counterspell ; scrapyard ; daydream ; shipwrecked ; blot ; easel
 ! arcade ; high seas ; bin ; som ; low skies ; boba/hackaccino/;juice ; SLACKOPOLYPSE
-Include "Parser";
-Include "VerbLib";
+Include "parser";
+Include "verbLib";
 
-Object SprigRoom "room"
+Object SprigRoom "room";
 
-print "DISCLAIMER PLEASE DON'T MURDER PEOPLE /GEN^";
-Intro();
+
 ! Sprig(); i don't think this is how it works lmAo
 
 
@@ -16,16 +15,17 @@ Intro();
     print "Also, you are dating a dinosaur.^";
     print "However, an association of obnoxius Hack Clubbers have recently launched an extremely evil plan: to murder Orpheus, the aforementioned dinosaur.^";
     print "There is only one way to save Orpheus; you must murder the Hack Clubbers involved.^";
-    print "Technically, this goes against your job [being Hack Club staff], but some sacrifices must be made.^^"
+    print "Technically, this goes against your job [being Hack Club staff], but some sacrifices must be made.^^";
 ];
 
 [Sprig;
     ! Sprig?
     print "Chapter ", 1, ": Sprig^^";
     print "You crawl into a small room, looking for ";
-]
+];
 
 [Initialise;
-
+    print "DISCLAIMER PLEASE DON'T MURDER PEOPLE /GEN^";
+    Intro();
 ];
-Include "Grammar";
+Include "grammar";
