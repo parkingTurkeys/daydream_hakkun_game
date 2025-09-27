@@ -4,28 +4,32 @@
 Include "parser";
 Include "verbLib";
 
-Object SprigRoom "room";
-
-
+Object SprigRoom "~Sprig Room~"
+    with description "The room is full with colorful squares floating around. Every once in a while, you hear a bell ring from the distance. To your left you can see square, plastic, light grey keycaps. Discarded before you on the floor is a green printed circuit board. In the corner of the room, an unevenly made trash can leans against the scratched up wall.",
+    name "Room" "first room",
+    initial "^^^Now, you have found a lead to where the devious hackers have hid. However, there are several rooms that you must traverse in order to get to murdering the hackers. Remember, SACRIFICES MUST BE MADE!!!<ÖT [like we have to sacrifice the evil hackers]",
+    has light
+;
+Object -> Sprig "PCB"
+    with name "pcb" "sprig" "green pcb" "game console",
+    description "A green PCB with a small screen and eight buttons on one side; the Hack Club flag is printed onto it in white. The other side has a slot for a battery and some strange holes--almost as though something were missing..."
+;
+!
 ! Sprig(); i don't think this is how it works lmAo
 
 
 [Intro;
-    print "You are Heidi Hakkun, a racoon who works for Hack Club.^You have mediocre intelligence and an immense love for making really amazing hardware projects.^";
+    print "You are Heidi Hakkuun, a racoon who works for Hack Club.^You have mediocre intelligence and an immense love for making really amazing hardware projects.^";
     print "Also, you are dating a dinosaur.^";
     print "However, an association of obnoxius Hack Clubbers have recently launched an extremely evil plan: to murder Orpheus, the aforementioned dinosaur.^";
     print "There is only one way to save Orpheus; you must murder the Hack Clubbers involved.^";
     print "Technically, this goes against your job [being Hack Club staff], but some sacrifices must be made.^^";
 ];
 
-[Sprig;
-    ! Sprig?
-    print "Chapter ", 1, ": Sprig^^";
-    print "You crawl into a small room, looking for ";
-];
 
 [Initialise;
     print "DISCLAIMER PLEASE DON'T MURDER PEOPLE /GEN^";
     Intro();
+    location = SprigRoom;
 ];
 Include "grammar";
