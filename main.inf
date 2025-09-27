@@ -1,11 +1,15 @@
 ! main game function;
 ! sprig ; arcade ; high seas ; bin ; Summer of Making ; low skies ; boba ; blot ; cider ; onboard ; counterspell ; scrapyard ; daydream ; shipwrecked ; blot ; easel
 ! arcade ; high seas ; bin ; som ; low skies ; boba/hackaccino/;juice ; SLACKOPOLYPSE
-[Main;
-    print "DISCLAIMER PLEASE DON'T MURDER PEOPLE /GEN^";
-    Intro();
-    Sprig();
-];
+Include "Parser";
+Include "VerbLib";
+
+Object SprigRoom "room"
+
+print "DISCLAIMER PLEASE DON'T MURDER PEOPLE /GEN^";
+Intro();
+! Sprig(); i don't think this is how it works lmAo
+
 
 [Intro;
     print "You are Heidi Hakkun, a racoon who works for Hack Club.^You have mediocre intelligence and an immense love for making really amazing hardware projects.^";
@@ -20,4 +24,8 @@
     print "Chapter ", 1, ": Sprig^^";
     print "You crawl into a small room, looking for ";
 ]
- 
+
+[Initialise;
+
+];
+Include "Grammar";
