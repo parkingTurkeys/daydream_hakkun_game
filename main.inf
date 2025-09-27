@@ -66,7 +66,13 @@ Object PicoRoom "Orpheus Pico Room"
     has light,
     with n_to PicoDoor
 ;
-Object -> OrpheusPico "Orpheus Pico"
+Object -> Shelf "shelf"
+    with description "A shelf with a small electronic-looking thingy on it.",
+    describe true,
+    name "shelf" "pico holder" "i hate my life uwu",
+    has supporter
+;
+Object ->-> OrpheusPico "Orpheus Pico"
     with description "A small thingy that does electronics stuff. It has a beautiful dinosaur on it.",
     name "pico" "orph pico" "microcontroller" "orpheus pico" "chip" "thingy that does electronics stuff" "electronics thingy" "shelf",
     describe true,

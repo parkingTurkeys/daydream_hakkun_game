@@ -1,6 +1,6 @@
 # "DON'T" MURDER THE HACKERS
-
-this is a text adventure game made in inform 6. once i have shipped it, i'll add a playable itch.io page. if you'd like to play it now, here's how:  
+[ITCH:IO](https://parking-turkeys.itch.io/daydream-boston-project)
+this is a text adventure game made in inform 6.  if you'd like to play it now, here's how:  
   
 1. compile the inform file.  
 you'll need the inform 6 compiler for this. [download one matching to your operating system from here](https://ifarchive.org/indexes/if-archive/infocom/compilers/inform6/executables/). add the executable to your path.  
