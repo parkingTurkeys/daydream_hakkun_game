@@ -13,7 +13,8 @@ Object SprigRoom "~Sprig Room~"
 Object -> Sprig "PCB"
     with name "pcb" "sprig" "green pcb" "game console",
     description "A green PCB with a small screen and eight buttons on one side; the Hack Club flag is printed onto it in white. The other side has a slot for a battery and some strange holes--almost as though something were missing...",
-    
+    invent "A strangely incomplete green PCB",
+    describe true,
     has edible,
     with after [;
         
@@ -27,12 +28,25 @@ Object -> Sprig "PCB"
 Object -> Trashcan "Trashcan"
     with description "A true work of art, leaning against the wall.",
     name "bin" "trash can" "trashcan" "trash bin" "trashbin",
+    describe true,
     before [;
         Eat: "You prefer the taste of trash.";
         Take: "No.";
     ],
     after [;
 
+    ]
+;
+Object Trash "Trash" Trashcan
+    with description "Beautiful, amazing, lovely, trash.",
+    name "trash" "trashhh" "heidi's dinner",
+    describe true,
+    before [;
+        Drop: "You will never let go of this lovely piece of trash.";
+    ],
+    after [;
+        Eat: "It tastes like trash--that is, amazing.";
+        Take: "Your heartbeat speeds up in anticipation of the taste.";
     ]
 ;
 !
@@ -53,4 +67,6 @@ Object -> Trashcan "Trashcan"
     Intro();
     location = SprigRoom;
 ];
+[ XyzzySub; "Nothing happens."; ];
+Verb 'xyzzy' * -> Xyzzy;
 Include "grammar";
