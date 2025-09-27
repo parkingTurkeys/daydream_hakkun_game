@@ -5,14 +5,35 @@ Include "parser";
 Include "verbLib";
 
 Object SprigRoom "~Sprig Room~"
-    with description "The room is full with colorful squares floating around. Every once in a while, you hear a bell ring from the distance. To your left you can see square, plastic, light grey keycaps. Discarded before you on the floor is a green printed circuit board. In the corner of the room, an unevenly made trash can leans against the scratched up wall.",
+    with description "The room is full with colorful squares floating around. Every once in a while, you hear a bell ring from the distance. To your left you can see square, plastic, light grey keycaps. Discarded before you on the floor is a green printed circuit board. In the corner of the room, an unevenly made trashcan leans against the scratched up wall.",
     name "Room" "first room",
     initial "^^^Now, you have found a lead to where the devious hackers have hid. However, there are several rooms that you must traverse in order to get to murdering the hackers. Remember, SACRIFICES MUST BE MADE!!!<ÖT [like we have to sacrifice the evil hackers]",
     has light
 ;
 Object -> Sprig "PCB"
     with name "pcb" "sprig" "green pcb" "game console",
-    description "A green PCB with a small screen and eight buttons on one side; the Hack Club flag is printed onto it in white. The other side has a slot for a battery and some strange holes--almost as though something were missing..."
+    description "A green PCB with a small screen and eight buttons on one side; the Hack Club flag is printed onto it in white. The other side has a slot for a battery and some strange holes--almost as though something were missing...",
+    
+    has edible,
+    with after [;
+        
+        Take: "You pick up the PCB. It pokes your finger a bit; you quickly hold it in a less spiky place.";
+        Drop: "It drops to the ground, making a disturbing noise. Examining it, it seems to still be as functional as it was beforehand.";
+    ],
+    before [;
+        Eat: "You love eating PCBs... however, this is not a functional one. Functional ones taste better.";
+    ]
+;
+Object -> Trashcan "Trashcan"
+    with description "A true work of art, leaning against the wall.",
+    name "bin" "trash can" "trashcan" "trash bin" "trashbin",
+    before [;
+        Eat: "You prefer the taste of trash.";
+        Take: "No.";
+    ],
+    after [;
+
+    ]
 ;
 !
 ! Sprig(); i don't think this is how it works lmAo
