@@ -5,19 +5,28 @@ Include "parser";
 Include "verbLib";
 
 Object SprigRoom "~Sprig Room~"
-    with description "The room is full with colorful squares floating around. Every once in a while, you hear a bell ring from the distance. To your left you can see square, plastic, light grey keycaps. Discarded before you on the floor is a green printed circuit board. In the corner of the room, an unevenly made trashcan leans against the scratched up wall.",
+    with description "The room is full with colorful squares floating around. Every once in a while, you hear a bell ring from the distance. To your left you can see square, plastic, light grey keycaps. Discarded before you on the floor is a green printed circuit board. In the corner of the room, an unevenly made trashcan leans against the scratched up wall. Behind you, a door leads into another room.",
     name "Room" "first room",
     initial "^^^Now, you have found a lead to where the devious hackers have hid. However, there are several rooms that you must traverse in order to get to murdering the hackers. Remember, SACRIFICES MUST BE MADE!!!<ÖT [like we have to sacrifice the evil hackers]",
-    has light
+    s_to SprigDoor,
+    has light,
+;
+Object -> SprigDoor "Door"
+    with door_to PicoRoom,
+    door_dir s_to,
+    description "A door with a few Orpheus stickers on it. One of them has you on it as well :3c",
+    name "door" "pico door",
+    has scenery static door openable,
+
 ;
 Object -> Sprig "PCB"
     with name "pcb" "sprig" "green pcb" "game console",
     description "A green PCB with a small screen and eight buttons on one side; the Hack Club flag is printed onto it in white. The other side has a slot for a battery and some strange holes--almost as though something were missing...",
     invent "A strangely incomplete green PCB",
     describe true,
-    has edible,
+    has edible supporter,
     with after [;
-        
+        Receive: if (noun == OrpheusPico) print "The screen turns on. You have won the game! This will be finished another time :3c";
         Take: "You pick up the PCB. It pokes your finger a bit; you quickly hold it in a less spiky place.";
         Drop: "It drops to the ground, making a disturbing noise. Examining it, it seems to still be as functional as it was beforehand.";
     ],
@@ -34,8 +43,9 @@ Object -> Trashcan "Trashcan"
         Take: "No.";
     ],
     after [;
-
-    ]
+        
+    ],
+    has static container open,
 ;
 Object Trash "Trash" Trashcan
     with description "Beautiful, amazing, lovely, trash.",
@@ -47,8 +57,36 @@ Object Trash "Trash" Trashcan
     after [;
         Eat: "It tastes like trash--that is, amazing.";
         Take: "Your heartbeat speeds up in anticipation of the taste.";
-    ]
+    ],
+    has edible
 ;
+Object PicoRoom "Orpheus Pico Room"
+    with description "A small, cupboard-esque room where schematics and circuit boards litter the shelves. You feel yourself pulled toward one shelf in particular...",
+    name "room" "pico room",
+    has light,
+    with n_to PicoDoor
+;
+Object -> OrpheusPico "Orpheus Pico"
+    with description "A small thingy that does electronics stuff. It has a beautiful dinosaur on it.",
+    name "pico" "orph pico" "microcontroller" "orpheus pico" "chip" "thingy that does electronics stuff" "electronics thingy" "shelf",
+    describe true,
+    before [;
+        Eat: "You would never desecrate Orpheus merch in that way... it does look really good though.";
+        Drop: "That could break the pico!";
+    ],
+    after [;
+        Take: "What a beautiful electronics thingy @@64";
+    ],
+    n_to PicoDoor
+;
+Object -> PicoDoor "door"
+    with door_to SprigRoom,
+    door_dir n_to,
+    description "A door with a few Orpheus stickers on it. One of them has you on it as well :3c",
+    name "door" "sprig door",
+    has scenery static door open,
+;
+
 !
 ! Sprig(); i don't think this is how it works lmAo
 
